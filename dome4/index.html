@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <link rel="stylesheet" href="styles/style.css"/>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/jquery.SuperSlide.2.1.1.source.js"></script>
+    <script type="text/javascript">
+        /*
+         首页js
+         */
+        $().ready(function(){
+            //start轮播
+            jQuery(".jsPicScroll").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,interTime:3000,delayTime:1200});
+            $(".prev").hover(function(){
+                var num = parseInt(leftS());
+                if(num!=0){
+                    $(".picList").animate({
+                        marginLeft:"100px"
+                    },200)
+                }
+            },function(){
+                var num = parseInt(leftS());
+                if(num!=0){
+                    $(".picList").animate({
+                        marginLeft:"0"
+                    },200)
+                }
+            });
+            function leftS(){
+                var left = $(".picList").css("left");
+                return left;
+            }
+            $(".next").hover(function(){
+                $(".picList").animate({
+                    marginLeft:"-100px"
+                },200)
+            },function(){
+                $(".picList").animate({
+                    marginLeft:"0"
+                },200)
+            });
+            //end轮播
+            //content start
+            jsStartShow();
+            jsEndShow();
+            $(".clist li").click(function(){
+                jsStartShow();
+                $(this).addClass("current");
+                $(this).siblings().removeClass("current");
+                var i =$(this).index();
+                var com =$(".com");
+                com.eq(i).show();
+                com.eq(i).siblings().hide();
+//          初始化css效果
+                jsEndShow();
+            });
+            function jsStartShow(){
+                $(".ibt2").css({
+                    marginLeft:"0",
+                    "transform":"translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)  scale(0.5)",
+                    "transition":"all .2s linear"
+                });
+                $(".ibt").css({
+                    marginLeft:"0",
+                    "transform":"translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)  scale(0.5)",
+                    "transition":"all .2s linear"
+                });
+                $(".im").css({
+                    "transform":"translate3d(0px, 0px, 0px)  rotateX(36deg) rotateY(100deg) rotateZ(0deg)  scale(0.5)",
+                    "transition":"all .3s linear"
+                });
+                $(".fzlc").css({
+                    marginLeft:"-870px",
+                    "transition":"all .5s linear"
+                });
+                $(".com_bt").css({
+                    top:"-100px",
+                    "transition":"all .5s linear"
+                });
+                $(".com_m0").css({
+                    left:"-100px",
+                    "transition":"all .5s linear"
+                });
+                $(".t0,.t2,.t3,.t4,.t5,.t6,.t7,.t8").css({
+                    bottom:"285px",
+                    left:"719px",
+                    "transition":"all .1s linear"
+                });
+                var com_u12Li = $(".com_ul2 li");
+                com_u12Li.eq(0).css({
+                    left:"284px",
+                    "transition":"all .5s linear"
+                });
+                com_u12Li.eq(2).css({
+                    left:"-284px",
+                    "transition":"all .5s linear"
+                });
+            }
+            //        最终css效果
+            function jsEndShow(){
+                setTimeout(function(){
+                    $(".ibt2").css({
+                        marginLeft:"456px",
+                        "transform":"translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(360deg) rotateZ(360deg)  scale(1)",
+                        "transition":"all .3s linear"
+                    });
+                    $(".ibt").css({
+                        marginLeft:"456px",
+                        "transform":"translate3d(0px, 0px, 0px) rotateX(360deg) rotateY(360deg) rotateZ(0deg)  scale(1)",
+                        "transition":"all .3s linear"
+                    });
+                    $(".im").css({
+                        "transform":"translate3d(0px, 0px, 0px)  rotateX(360deg) rotateY(360deg) rotateZ(0deg)  scale(1)",
+                        "transition":"all .5s linear"
+                    });
+                    $(".fzlc").css({
+                        marginLeft:"0",
+                        "transition":"all .5s linear"
+                    });
+                    $(".com_bt").css({
+                        top:"0",
+                        "transition":"all .5s linear"
+                    });
+                    $(".com_m0").css({
+                        left:"65px",
+                        "transition":"all .5s linear"
+                    });
+                    $(".t0").css({
+                        bottom:"285px",
+                        left:"594px",
+                        "transition":"all .3s linear .4s"
+                    });
+                    $(".t2").css({
+                        bottom:"305px",
+                        left:"64px",
+                        "transition":"all .3s linear .2s"
+                    });
+                    $(".t3").css({
+                        bottom:"305px",
+                        left:"193px",
+                        "transition":"all .3s linear .3s"
+                    });
+                    $(".t4").css({
+                        bottom:"305px",
+                        left:"335px",
+                        "transition":"all .3s linear .1s"
+                    });
+                    $(".t5").css({
+                        bottom:"305px",
+                        left:"510px",
+                        "transition":"all .3s linear .4s"
+                    });
+                    $(".t6").css({
+                        bottom:"413px",
+                        left:"510px",
+                        "transition":"all .3s linear .2s"
+                    });
+                    $(".t7").css({
+                        bottom:"305px",
+                        left:"621px",
+                        "transition":"all .3s linear .2s"
+                    });
+                    $(".t8").css({
+                        bottom:"305px",
+                        left:"764px",
+                        "transition":"all .3s linear .3s"
+                    });
+                    var com_u12Li = $(".com_ul2 li");
+                    com_u12Li.eq(0).css({
+                        left:"0",
+                        "transition":"all .5s linear"
+                    });
+                    com_u12Li.eq(2).css({
+                        left:"0",
+                        "transition":"all .5s linear"
+                    });
+                },100);
+            }
+//      公司理念 start
+            $(".com_ul2 li").hover(function(){
+                $(this).find(".com_bg2").fadeIn();
+                $(this).find(".com_pic2").animate({marginTop:"0"});
+                $(this).find(".com_btm").animate({top:"195px"});
+                $(this).find(".com_m").fadeIn();
+                $(this).find(".com_bt3").fadeOut();
+            },function(){
+                $(this).find(".com_bg2").fadeOut();
+                $(this).find(".com_pic2").animate({marginTop:"118px"});
+                $(this).find(".com_btm").animate({top:"187px"});
+                $(this).find(".com_m").fadeOut();
+                $(this).find(".com_bt3").fadeIn();
+            });
+//      公司理念 end
+//      content end
+            //case start
+            $(".item").hover(function(){
+                $(this).find(".itm").fadeIn();
+                $(this).find(".itIam").css({
+                    "transform":"scale(1.1) rotate(-5deg)",
+                    "transition":"all .3s linear"
+                });
+                $(this).find(".caseName").show().css({
+                    "top":"25px",
+                    "transition":"all .2s linear"
+                });
+                $(this).find(".caseWb").show().css({
+                    "top":"55px",
+                    "transition":"all .3s linear"
+                });
+                $(this).find(".caseTime").show().css({
+                    "top":"80px",
+                    "transition":"all .3s linear"
+                });
+            },function(){
+                $(this).find(".itm").fadeOut();
+                $(this).find(".itIam").css({
+                    "transform":"scale(1) rotate(0deg)",
+                    "transition":"all .3s linear"
+                });
+                $(this).find(".caseName").css({
+                    "top":"0",
+                    "transition":"all .2s linear"
+                });
+                $(this).find(".caseWb").css({
+                    "top":"0",
+                    "transition":"all .2s linear"
+                });
+                $(this).find(".caseTime").css({
+                    "top":"0",
+                    "transition":"all .2s linear"
+                });
+            });
+            //case end
+//  footer start
+            $(window).scroll(function(){
+                var scrollValue = $(window).scrollTop();
+                if(scrollValue>=1000){
+                    $(".footer").css("z-index","100");
+                }else{
+                    $(".footer").css("z-index","1");
+                }
+            });
+//  footer end
+        });
+    </script>
+</head>
+<body>
+<!--header begin-->
+    <div class="header">
+        <div class="top">
+            <div class="logo fl"><a href="#"><img src="images/logo.jpg" width="165" height="75"></a></div>
+            <div class="tel fr">13540034978 / 028-85283257</div>
+            <div class="nav">
+                <ul class="menu">
+                    <li class="current"><a href="#" class="hover"><span class="ch">首页</span><span class="eng">Home</span></a></li>
+                    <li><a href="#" class=""><span class="ch">我们</span><span class="eng">About</span></a></li>
+                    <li><a href="#" class=""><span class="ch">服务</span><span class="eng">Service</span></a></li>
+                    <li><a href="#" class=""><span class="ch">案例</span><span class="eng">Case</span></a></li>
+                    <li><a href="#" class=""><span class="ch">动态</span><span class="eng">News</span></a></li>
+                    <li><a href="#"><span class="ch">客户</span><span class="eng">Client</span></a></li>
+                    <li><a href="#"><span class="ch">联系</span><span class="eng">Contact</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--header end-->
+<!--banner begin-->
+    <div class="jsPicScroll">
+        <div class="hd">
+            <a class="next"></a>
+            <a class="prev"></a>
+        </div>
+        <div class="bd">
+                <ul class="picList clearfix">
+                    <li>
+                        <div class="pic">
+                            <a href="#" target="_blank">
+                                <img src="images/141029142605_654.jpg" width="1920" height="722">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <a href="#" target="_blank">
+                            <img src="images/141029142507_921.jpg" width="1920" height="722">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <a href="#" target="_blank">
+                                <img src="images/141029142621_316.jpg" width="1920" height="722">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <a href="#" target="_blank">
+                                <img src="images/141103172410_633.jpg" width="1920" height="722">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+    </div>
+<!--banner end-->
+
+<!--content begin-->
+    <div class="jsContent">
+        <div class="w1000">
+            <div class="lside fl">
+                <ul class="clist">
+                    <li class="current"><a href="javascript:void(0)">公司介绍</a><div class="tb"></div></li>
+                    <li><a href="javascript:void(0)">发展历程</a><div class="tb tb2"></div></li>
+                    <li><a href="javascript:void(0)">公司理念</a><div class="tb tb3"></div></li>
+                    <li><a href="javascript:void(0)">爱诚团队</a><div class="tb tb4"></div></li>
+                </ul>
+            </div>
+            <div class="rside fr">
+                <div class="com cur">
+                    <div class="cbg0"></div>
+                    <div class="cbg1"></div>
+                    <div class="imain">
+                        <h3 class="ibt js3d1"><span class="co0">爱诚</span>科技</h3>
+                        <h4 class="ibt2 js3d2">真心爱尔，诚意服务</h4>
+                        <div class="im js3d5"><p><span style="font-size: 14px;">&nbsp; &nbsp;成都爱诚科技有限公司成立于2008年12月，诞生于一个志同道合的信念和执着的追求，主力成员均受过设计学、 美术学、计算机专业教育。我们拥有充满朝气的年轻团队，积极乐观，创造和谐的工作氛围，让工作成为一种快乐的生活是我们追求的理念，将视觉感知和艺术内涵融入到设计中，我们相信，洋溢着思想的设计才是真正的设计，充实着思想的作品才是真正的作品。工作室成员为了共同的梦想走在一起，除了个性，我们强调的还有沟通；除了感性与激情，我们强调的还有冷静、理智和清醒的方向；除了设计，我们强调的还有设计背后的思考，成都爱诚科技有限公司，一个充满朝气的团队，一个用真心，用技术，用创意感动每一位客户的团队，这是我们努力的目标。 造一个全新的网络品牌形象。</span></p></div>
+                    </div>
+                </div>
+                <div class="com">
+                    <div class="fzlc">
+                        <img src="images/141029161635_752.jpg" width="1640" title="高端网页设计_地产网站设计_成都做网站_成都建网站" height="350" class="dragme" style="left: 0px;">
+                    </div>
+                    <div class="lcts"></div>
+                </div>
+                <div class="com">
+                    <ul class="com_ul2">
+                        <li>
+                            <div class="com_bg2 ad_bg0"></div>
+                            <div class="com_mm">
+                                <div class="com_pic2"><img src="images/140917173451_989.jpg" width="202" height="202"></div>
+                                <div class="com_bt3 "></div>
+                                <div class="com_btm">激情</div>
+                                <div class="com_m">
+                                    <h3>Passion</h3>
+                                    <p>任何一个好的设计作品都需要有独到之处，融入设计理念和创新意识，让用户感觉到不一样的地方，有眼前一亮豁然开朗的感觉，从而达到网站建设和品牌推广的目的，所以创新就成为一个好作品的灵魂所在。</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="com_bg2 "></div>
+                            <div class="com_mm">
+                                <div class="com_pic2"><img src="images/140917173433_732.jpg" width="202" height="202"></div>
+                                <div class="com_bt3 ab_bg1"></div>
+                                <div class="com_btm">创新</div>
+                                <div class="com_m">
+                                    <h3>Innovation</h3>
+                                    <p>任何一个好的设计作品都需要有独到之处，融入设计理念和创新意识，让用户感觉到不一样的地方，有眼前一亮豁然开朗的感觉，从而达到网站建设和品牌推广的目的，所以创新就成为一个好作品的灵魂所在。</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="com_bg2 ab_bg2"></div>
+                            <div class="com_mm">
+                                <div class="com_pic2"><img src="images/140917173332_292.jpg" width="202" height="202"></div>
+                                <div class="com_bt3 ad_bg1"></div>
+                                <div class="com_btm">真诚</div>
+                                <div class="com_m">
+                                    <h3>Sincere</h3>
+                                    <p>我们对待客户以真诚的态度，从来不欺骗或者是忽悠的方式以获得客户的短暂认同，我们只给客户做实际的分析，各种方式和手段的客观对比，同时加入我们专业的意见和建议，呈现出不同方案的优缺点供客户进行自由选择！</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="com">
+                    <div class="com_bt" title="成都做网站_成都建网站"><span>爱诚团队</span>这里就是爱诚family</div>
+                    <div class="com_m0">
+                        <h3>快乐工作，健康工作</h3>
+                        <p>快乐的工作、快乐的生活、快乐你生命的每一刻。</p>
+                        <p>我们用快乐去感染自己和伙伴。</p>
+                        <p>我们因为快乐而有所不同，在爱诚，你应相信快乐会带给你更多的工作乐趣，</p>
+                        <p>也会让你成为团队中最受欢迎的成员。</p>
+                    </div>
+                    <div class="tpic t0"><img src="images/1.jpg"></div>
+                    <div class="tpic t1"><img src="images/2.jpg"></div>
+                    <div class="tpic t2"><img src="images/3.jpg"></div>
+                    <div class="tpic t3"><img src="images/4.jpg"></div>
+                    <div class="tpic t4"><img src="images/5.jpg"></div>
+                    <div class="tpic t5"><img src="images/6.jpg"></div>
+                    <div class="tpic t6"><img src="images/7.jpg"></div>
+                    <div class="tpic t7"><img src="images/8.jpg"></div>
+                    <div class="tpic t8"><img src="images/9.jpg"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--content end-->
+<!--case begin-->
+<div class="index_case o">
+    <div class="index_case_focus clearfix">
+            <div class="case fl">
+                <div class="item">
+                    <div class="item2">
+                        <img src="images/ac.png" title="成都网站建设_成都网站制作_成都网站设计_成都网络公司">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show1.jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">Black-white</div>
+                        <div class="caseWb">网址：<a href="" target="_blank">http://www.ac57.com</a></div>
+                        <div class="caseTime">时间：2014-11-12</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (1).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">水井坊</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.swellfun.com</a></div>
+                        <div class="caseTime">时间：2014-10-23</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (2).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">水井坊.艺术臻酿</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.artspirits.cn/</a></div>
+                        <div class="caseTime">时间：2014-10-24</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (3).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">风云相美</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://scfyxm.ac91.com/</a></div>
+                        <div class="caseTime">时间：2014-10-17</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (4).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">戛纳湾</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.cannesbay.com/</a></div>
+                        <div class="caseTime">时间：2014-10-01</div>
+                    </div>
+                </div>
+                <div class="item" >
+                    <div class="item2">
+                        <img class="itIam" src="images/show (5).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">润颜文化</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.shrunc.com/</a></div>
+                        <div class="caseTime">时间：2014-10-20</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (6).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">乔梵尼</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.giovanni-france.com/</a></div>
+                        <div class="caseTime">时间：2014-10-16</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (7).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">壹养荟</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.yiyanghui-health.com/</a></div>
+                        <div class="caseTime">时间：2014-11-06</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (8).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">MAOUS</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.maous.cn/</a></div>
+                        <div class="caseTime">时间：2014-10-16</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <img class="itIam" src="images/show (9).jpg">
+                        <div class="itm"><a href="#" class="casea"></a></div>
+                        <div class="caseName">Isay</div>
+                        <div class="caseWb">网址：<a href="#" target="_blank">http://www.isay-fashion.com/</a></div>
+                        <div class="caseTime">时间：2014-10-16</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item2">
+                        <a href="#"><img src="images/1c.png"></a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<!--case end-->
+<!--footer begin-->
+<div class="footer"><img src="images/map.png" alt="" width="1919" height="730"/></div>
+<!--footer end-->
+</body>
+</html>

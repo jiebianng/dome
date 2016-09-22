@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0 }
+body, button, input, select, textarea { font:12px Arial, Helvetica, sans-serif }
+h1, h2, h3, h4, h5, h6 { font-size:100%; color:#333 }
+address, cite, dfn, em, var { font-style:normal }
+code, kbd, pre, samp { font-family:courier new, courier, monospace }
+small { font-size:12px }
+ul, ol, li { list-style:none }
+a { text-decoration:none }
+a:hover { text-decoration:none }
+/*公共*/
+.main_c{width:1150px; margin:0 auto;}
+.pub_t{height:28px; background:#343639;border-bottom:3px solid #76c6ff; position:relative; z-index:3;}
+.t_login{ float:right; font-size:12px; line-height:16px; padding:6px 20px; color:#fff; }
+.t_user_center, .t_app_manage, .t_cms { background:url(images/top_public_ico.gif) no-repeat; }
+.t_user_center { background-position:0 -1px; }
+.t_app_manage { background-position:0 -15px; }
+.t_cms { background-position:0 -30px; }
+.t_user_info{float:right; font-size:12px; line-height:16px;color:#fff; } 
+.t_user_info .ico{height:15px;width:20px;}
+.t_user_info a{ display:inline-block; zoom:1; *display:inline;height:15px; line-height:16px;border-left:1px solid #666; padding:6px 10px;vertical-align:middle;overflow:hidden }
+.t_user_info a:first-child{border:none;}
+
+.bigfs,.pricing_table th,.price .free,.price .vip,.contact .phone,.contact .qq{ font-family:'微软雅黑', 'YaHei', '黑体', 'Hei', Tahoma, Helvetica, arial, sans-serif;}
+.pricing_banner{height:256px;min-width:960px; background:url(../images/taocan/banner_pricing-.jpg) no-repeat center top; position:relative;}
+.main_c{ height:100%;position:relative;}
+.app_type{ position:absolute;bottom:0; right: 0px; padding: 5px 0px 0;}
+.app_type li{ float:left;height:64px; border-width:5px 0 0 0; border-style:solid; font-size:24px; color:#333; background:#fff; text-align:center; line-height:64px;width:150px;}
+.app_type li.free{border-color:#76be36;color:#76be36;}
+.app_type li.vip{border-color:#f16635;color:#f16635;border-left:1px solid #ececec;}
+.pricing_table{margin:0 15px 30px;width:1120px;}
+.pricing_table th{height:28px; line-height:28px;padding:15px 20px; font-size:18px;color:#333333; font-weight:normal; border-bottom:2px solid #cecece;border-left:1px solid #ececec;}
+.pricing_table td{height:40px;padding:5px 20px; font-size:14px;color:#666; border-bottom:1px solid #ececec;border-left:1px solid #ececec; text-align:center;}
+.pricing_table td.first,.pricing_table th.first{ text-align:left;border-left:none;}
+.price th,.price td,.contact th,.contact td{ background:#f4f4f4;border-bottom:none;}
+.contact th{border-top:2px solid #fff;}
+.contact td{padding:10px 20px 20px;}
+.price .free{ background:#76be36; font-size:22px;color:#fff;}
+.price .vip{ background:#f16635;font-size:22px;color:#fff;}
+.price .free span,.price .vip span{ font-size:14px;}
+.contact .phone,.contact .qq{  float:left;padding:6px 10px 6px 62px;margin-right:30px; background:url(../images/taocan/pricing_icon.gif) 0 -28px no-repeat; }
+.contact .phone{font-size: 32px;line-height: 14px;}
+.contact .qq{ background-position:0 -84px; text-decoration:none;color:#666;font-size:32px; line-height:44px;}
+
+.fiexd_nav{ position:fixed; top:0;height:42px;width:100%; background:#f5f5f5; border-bottom:1px solid #ececec; z-index:100; display:none;_height:0;_width:0; overflow:hidden;}
+.fiexd_nav .app_type{padding:0;right:15px;}
+.fiexd_nav .app_type li{height:41px; line-height:41px; border-top-width:1px; font-size:18px; font-weight:bold;}
+.icon{ display:inline-block;* display:inline;zoom:1;width:28px;height:28px; background:url(../images/taocan/pricing_icon.gif) no-repeat; overflow:hidden; vertical-align:middle;margin-right:3px;}
+.icon.ico1{background-position:0 0;}
+.icon.ico2{background-position:-28px 0;}
+.icon.ico3{background-position:-56px 0;}
+.icon.ico4{background-position:-84px 0;}
+.icon.ico5{background-position:-112px 0;}
+.icon.ico6{background-position:-140px 0;}
+.icon.yes{ background-position:-168px 0;}
+.icon.other{ background-position:-196px 0;}
+.icon.no{ background-position:-224px 0;}
+
+.new1 {
+  display: inline-block;
+  zoom: 1;
+  width: 26px;
+  height: 11px;
+  margin: 1px 0 0 3px;
+  background: url(../images/taocan/new.gif) no-repeat;
+}
